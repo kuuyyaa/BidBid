@@ -4,21 +4,65 @@ body {
 }
 
 /* Jumbotron */
-.jumbotron {
+.jumbotron.text-left {
+    padding: 5rem 7.5rem ;
+    background: 
+    linear-gradient(to right, #4036b6, #342a34);
+    color: white;
+    border-radius: 0%;
 }
 
 .jumbotron .display-4 {
-    font-size: 3rem ; /* Adjust size */
-    font-weight: 200px; /* Make it bold */
+    font-size: 3rem ; 
+    font-weight: bold; 
     margin-bottom: 1.5rem;
-    color: #2c3e50 !important; /* Change color */
+
+}
+
+.jumbotron .btn-primary {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    width: 150px;
+    border-radius: 25px;
+    border: none;
+}
+.jumbotron .btn-primary:hover {
+    background-color: white;
+    color: #342a34;
+    transition: background-color 0.3s ease-out;
+}
+
+/* ----- About us section ----- */
+/* Card styles */
+.card-headshot {
+    height: 250px;
+    width: 250px;
+    /* background-color: white; */
+    border-radius: 125px;
+    margin: 3rem;
+}
+
+.headshot-body {
+    /* color: white; */
+    padding: 2rem;
+    padding-top: 0;
+}
+
+.about-us-card {
+    background: linear-gradient(to bottom, #5ad5d3, #07868a);
+    border-radius: 35px;
+}
+
+.background-card {
+    border-radius: 35px;
+    box-shadow: none;
 }
 
 
 /* Media query for mobile devices (screen width <= 768px) */
 @media (max-width: 768px) {
     .jumbotron {
-        padding: 2rem 1rem; /* Reduce padding for smaller screens */
+        padding: 2rem 2rem ; /* Reduce padding for smaller screens */
     }
     .jumbotron .display-4 {
         font-size: 2rem; /* Adjust font size for headline */
