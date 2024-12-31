@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Jumbotron */
+.jumbotron {
+}
+
+.jumbotron .display-4 {
+    font-size: 3rem ; /* Adjust size */
+    font-weight: 200px; /* Make it bold */
+    margin-bottom: 1.5rem;
+    color: #2c3e50 !important; /* Change color */
+}
+
+
+/* Media query for mobile devices (screen width <= 768px) */
+@media (max-width: 768px) {
+    .jumbotron {
+        padding: 2rem 1rem; /* Reduce padding for smaller screens */
+    }
+    .jumbotron .display-4 {
+        font-size: 2rem; /* Adjust font size for headline */
+    }
+    .jumbotron .lead {
+        font-size: 1rem; /* Smaller font size for subheading */
+    }
+}
