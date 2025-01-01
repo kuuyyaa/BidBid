@@ -99,6 +99,10 @@ div.col-md-6.d-flex.flex-row{
     margin-bottom: 2rem;
 }
 
+div.col.d-flex.flex-row {
+    margin-bottom: 2rem;
+}
+
 /* Media query for mobile devices (screen width <= 768px) */
 @media (max-width: 768px) {
     ul {
