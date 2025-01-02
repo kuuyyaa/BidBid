@@ -189,6 +189,48 @@ a.btn-primary:hover {
     margin-bottom: 1.5rem;
 }
 
+/* Marquee animation */
+.marquee-container {
+    width: 100%;
+    background-color: #f8f9fa;
+    padding: 15px 0;
+  }
+ 
+  .marquee-content {
+    display: flex;
+    animation: marquee 30s linear infinite;
+  }
+ 
+  .marquee-item {
+    flex: 0 0 auto;
+    padding: 0 20px;
+    font-size: 1.2rem;
+    color: #495057;
+  }
+ 
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+ 
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  img.portfolio-item {
+    height: 3rem;
+    width: 3rem;
+    /* background-color: white; */
+    /* border-radius: 50%; */
+    margin: 3rem;
+}
+ 
+  /* Optional: Pause animation on hover */
+  /* .marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+  } */
+
 /* Media query for mobile devices (screen width <= 768px) */
 @media (max-width: 768px) {
     ul {
@@ -220,6 +262,9 @@ a.btn-primary:hover {
     }
     div.card.news-item {
         width: 100%;
+    }
+    h4.benefit-list {
+        font-size: 1.25rem;
     }
 
 }
