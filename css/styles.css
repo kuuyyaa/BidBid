@@ -164,6 +164,11 @@ h5.card-title {
     padding-top: 2rem;
 }
 
+hr.color-hr {
+    border-color: rgba(64, 54, 182, 0.2);
+    border-width: 2px;
+}
+
 .inv-hr {
     border-color: white;
     border-width: 1px;
@@ -403,6 +408,54 @@ footer  {
     opacity: 0.7;
 }
 
+/* FAQs */
+.faq-section {
+    margin: 20px 0;
+}
+.faq-item {
+    border-bottom: 1px solid #ccc;
+    padding: 15px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.faq-item h4 {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+}
+.faq-item p {
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #666;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+.faq-item.open p {
+    max-height: 100px; /* Adjust based on content */
+    opacity: 1;
+}
+
+button.btn-faqs {
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #342a34;
+    background-color: rgba(52, 42, 52, 0.141);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+button.btn-faqs:hover {
+    background-color: #342a34;
+    color: #fff;
+    transform: scale(1.03);
+    transition: background-color 0.3s ease-out;
+}
 
 
 /* Media query for mobile devices (screen width <= 768px) */
