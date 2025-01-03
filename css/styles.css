@@ -489,6 +489,12 @@ button.btn-faqs:hover {
         font-size: 18px;
         
     }
+    .btn-sign-in {
+        margin-top: 20px; 
+        margin-bottom: 30px;
+        margin-left: 1rem;
+    }
+
     .card-headshot {
         height: 125px;
         width: 125px;
