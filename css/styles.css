@@ -169,6 +169,7 @@ a.btn-primary {
     border-color: rgba(0, 0, 0, 0);
     width: fit-content;
     border-radius: 20px;
+    font-weight: bold;
     
 }
 
@@ -198,6 +199,7 @@ a.btn-primary:hover {
     position: relative; /* Position relative for child elements */
         mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent); /* Standard mask */
         -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent); /* WebKit-based browsers */
+        margin-bottom: 1.25rem;
 }
 .portfolio {
     background: linear-gradient(to right, rgba(64, 54, 182, 1), rgba(52, 42, 52, 1));
@@ -209,13 +211,14 @@ a.btn-primary:hover {
  
   .marquee-content {
     display: flex;
-    animation: marquee 25s linear infinite;
+    animation: marquee 10s linear infinite;
     will-change: transform; /* Improves performance for animations */
     transition: transform 0.3s ease-in-out; /* Smooth transition for pausing */
+    
   }
  
   .marquee-item {
-    flex: 0 0 auto;
+    flex: none;
     padding: 20 20px;
     font-size: 1.2rem;
     color: #495057;
@@ -224,7 +227,7 @@ a.btn-primary:hover {
  
   @keyframes marquee {
     0% {
-      transform: translateX(100%);
+      transform: translateX(0%);
     }
  
     100% {
@@ -236,14 +239,38 @@ a.btn-primary:hover {
     height: 175px;
     width: 175px;
     /* background-color: white; */
-    border-radius: 50%;
+    border-radius: 10%;
     /* margin: 0.5rem; */
 }
  
-  /* Optional: Pause animation on hover */
-  .container-marquee:hover .marquee-content {
-    animation-play-state: paused; /* Pause animation on hover */
+  /* Button Styling */
+  .explore-button {
+    position: absolute; /* Position relative to container */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    color: #342a34;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.15s ease-in-out; /* Smooth transition for appearance */
+    z-index: 2; /* Ensure button is above the marquee */
 }
+
+.container:hover .marquee-content {
+    opacity: 0.1; /* Reduce opacity on hover */
+    transition: opacity 0.3s ease-in-out
+}
+
+.container:hover .explore-button {
+    opacity: 1; /* Show button on hover */
+}
+  
 
 /* Media query for mobile devices (screen width <= 768px) */
 @media (max-width: 768px) {
@@ -281,7 +308,7 @@ a.btn-primary:hover {
         font-size: 1.25rem;
     }
     .marquee-content {
-        animation: marquee 15s linear infinite;
+        animation: marquee 10s linear infinite;
       }
       @keyframes marquee {
         0% {
@@ -292,5 +319,13 @@ a.btn-primary:hover {
           transform: translateX(-200%);
         }
       }
+
+    .container-marquee {
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+    .container-marquee:hover .marquee-content {
+        animation-play-state: running;
+    }
 
 }
