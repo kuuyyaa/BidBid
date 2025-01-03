@@ -393,6 +393,16 @@ svg.bi {
     transition: background-color 0.3s ease-out;
 }
 
+footer  {
+    background: linear-gradient(to right, rgb(41, 33, 134), rgba(52, 42, 52, 1));
+    color: #fff;
+}
+.footer-link {
+    text-decoration: underline;
+    color: #fff;
+    opacity: 0.7;
+}
+
 
 
 /* Media query for mobile devices (screen width <= 768px) */
@@ -466,5 +476,11 @@ svg.bi {
         animation-play-state: running;
     }
     
+    .footer-link {
+        padding-left: 1.5rem;
+        text-decoration: underline;
+        color: #fff;
+        opacity: 0.7;
+    }
 
 }
