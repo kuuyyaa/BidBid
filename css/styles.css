@@ -8,6 +8,22 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
+.custom-underline {
+    position: relative; /* For positioning the underline */
+    text-decoration: none; /* Remove the default underline */
+}
+
+.custom-underline::after {
+    content: ""; /* Creates the underline */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%; /* Full width of the text */
+    height: 2px; /* Thickness of the underline */
+    background-color: currentColor; /* Matches the text color */
+    opacity: 0.3; /* Semi-transparent underline */
+}
+
 p.lead {
     font-size: 25px;
 }
@@ -22,6 +38,7 @@ p {
 }
 .card {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem !important;
 }
 
 .container h3 {
@@ -70,6 +87,7 @@ li {
     width: 150px;
     border-radius: 25px;
     border: none;
+    margin-top: 1.5rem;
 }
 .jumbotron .btn-primary:hover {
     background-color: white;
@@ -101,13 +119,14 @@ li {
 
 .background-card {
     border-radius: 35rem;
-    box-shadow: none;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
 }
 
-h3 {
-    margin-bottom: 1.75rem !important;
+h3.background-title {
+    margin-bottom: 1rem !important;
+    margin-top: 0.25rem !important;
+    color: #181449;
 }
-
 
 
 div.card-body {
@@ -185,9 +204,9 @@ a.btn-primary:hover {
 }
 
 .benefit-title {
-    color: #342a34;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem !important;
+    margin-top: 0.25rem !important;
+    color: #181449;
 }
 
 svg.bi {
@@ -219,7 +238,7 @@ svg.bi {
  
   .marquee-content {
     display: flex;
-    animation: marquee 10s linear infinite;
+    animation: marquee 25s linear infinite;
     will-change: transform; /* Improves performance for animations */
     transition: transform 0.3s ease-in-out; /* Smooth transition for pausing */
     
@@ -262,6 +281,7 @@ svg.bi {
     color: #342a34;
     border: none;
     padding: 10px 20px;
+    padding-right: 15px;
     border-radius: 25px;
     font-size: 1.25rem;
     font-weight: bold;
@@ -291,6 +311,11 @@ svg.bi {
         font-size: 18px;
         
     }
+    .card-headshot {
+        height: 125px;
+        width: 125px;
+        margin: 2rem;
+    }
     .jumbotron {
         padding: 5rem 2rem !important; /* Reduce padding for smaller screens */
     }
@@ -298,12 +323,16 @@ svg.bi {
         font-size: 2rem; /* Adjust font size for headline */
     }
     .jumbotron .lead {
-        font-size: 1rem; /* Smaller font size for subheading */
+        font-size: 1.4rem; /* Smaller font size for subheading */
+    }
+    .jumbotron .btn-primary {
+        background-color: rgba(255, 255, 255, 0.855);
+        color: rgba(52, 42, 52, 1);
     }
 
-    h3 {
+    /* h3 {
         margin-bottom: 1.75rem !important;
-    }
+    } */
     .headshot-body {
         padding-bottom: 2.25rem;
     }
@@ -323,7 +352,7 @@ svg.bi {
         top: -2px;
     }
     .marquee-content {
-        animation: marquee 10s linear infinite;
+        animation: marquee 18s linear infinite;
       }
       @keyframes marquee {
         0% {
