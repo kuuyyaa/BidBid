@@ -160,8 +160,8 @@ div.card.news-item {
 }
 
 .news-item:hover {
-    transform: scale(1.03);
-    transition: transform 0.3s ease-out;
+    transform: scale(1.035);
+    transition: transform 0.3s ease-in-out;
 }
 
 a.btn-primary {
@@ -188,6 +188,13 @@ a.btn-primary:hover {
     color: #342a34;
     font-weight: bold;
     margin-bottom: 1.5rem;
+}
+
+svg.bi {
+    vertical-align: middle; 
+    margin-right: 15px; 
+    position: relative; 
+    top: -2px;
 }
 
 /* Marquee animation */
@@ -307,8 +314,13 @@ a.btn-primary:hover {
         width: 100%;
     }
     h4.benefit-list {
-        font-size: 1rem;
-        font-weight: bold; 
+        font-size: 1.1rem; 
+    }
+    svg.bi {
+        vertical-align: middle; 
+        margin-right: 8px; 
+        position: relative; 
+        top: -2px;
     }
     .marquee-content {
         animation: marquee 10s linear infinite;
