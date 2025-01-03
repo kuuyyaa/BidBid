@@ -522,10 +522,13 @@ button.btn-faqs:hover {
     }
     h4.benefit-list {
         font-size: 1.3rem; 
+        padding-left: 0.5rem ;
+        padding-right: 0.5rem ;
     }
     svg.bi {
         vertical-align: middle; 
-        margin-right: 8px; 
+        margin-right: 25px;
+        margin-left: 10px; 
         position: relative; 
         top: -2px;
     }
