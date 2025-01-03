@@ -148,7 +148,7 @@ h5.card-title {
 .inv-hr {
     border-color: white;
     border-width: 1px;
-    opacity: 0.75;
+    opacity: 0.25;
 }
 
 div.card.news-item {
@@ -190,22 +190,36 @@ a.btn-primary:hover {
 }
 
 /* Marquee animation */
+.container {
+    overflow: hidden;
+}
+.container-marquee {
+    width: 100%;
+    position: relative; /* Position relative for child elements */
+        mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent); /* Standard mask */
+        -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent); /* WebKit-based browsers */
+}
+.portfolio {
+    background: linear-gradient(to right, rgba(64, 54, 182, 1), rgba(52, 42, 52, 1));
+}
 .marquee-container {
     width: 100%;
-    background-color: #f8f9fa;
     padding: 15px 0;
   }
  
   .marquee-content {
     display: flex;
-    animation: marquee 30s linear infinite;
+    animation: marquee 25s linear infinite;
+    will-change: transform; /* Improves performance for animations */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for pausing */
   }
  
   .marquee-item {
     flex: 0 0 auto;
-    padding: 0 20px;
+    padding: 20 20px;
     font-size: 1.2rem;
     color: #495057;
+    transition: filter 0.3s ease; /* Smooth transition of blur effect */
   }
  
   @keyframes marquee {
@@ -218,18 +232,18 @@ a.btn-primary:hover {
     }
   }
 
-  img.portfolio-item {
-    height: 3rem;
-    width: 3rem;
+ .marquee-item img {
+    height: 175px;
+    width: 175px;
     /* background-color: white; */
-    /* border-radius: 50%; */
-    margin: 3rem;
+    border-radius: 50%;
+    /* margin: 0.5rem; */
 }
  
   /* Optional: Pause animation on hover */
-  /* .marquee-container:hover .marquee-content {
-    animation-play-state: paused;
-  } */
+  .container-marquee:hover .marquee-content {
+    animation-play-state: paused; /* Pause animation on hover */
+}
 
 /* Media query for mobile devices (screen width <= 768px) */
 @media (max-width: 768px) {
@@ -266,5 +280,17 @@ a.btn-primary:hover {
     h4.benefit-list {
         font-size: 1.25rem;
     }
+    .marquee-content {
+        animation: marquee 15s linear infinite;
+      }
+      @keyframes marquee {
+        0% {
+          transform: translateX(100%);
+        }
+     
+        100% {
+          transform: translateX(-200%);
+        }
+      }
 
 }
