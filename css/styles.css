@@ -81,6 +81,22 @@ li {
 
 }
 
+.typewriter {
+    font-size: 2rem; /* Adjust to match your design */
+    font-family: sans-serif; /* Match your typography */
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Hide overflow during typing */
+    display: block;
+    height: 1em; /* Adjust based on your line height */
+    visibility: visible; /* Ensure the element is visible */
+}
+
+.placeholder {
+    visibility: hidden; /* Keep the placeholder invisible */
+    white-space: nowrap;
+    height: 1em;
+}
+
 .jumbotron .btn-primary {
     background-color: rgba(255, 255, 255, 0.1);
     color: #fff;
@@ -457,7 +473,12 @@ button.btn-faqs:hover {
     transition: background-color 0.3s ease-out;
 }
 
-
+/* query for non mobile devices */
+@media (min-width: 769px) {
+    .form-btn {
+        display: none;
+    }
+}
 /* Media query for mobile devices (screen width <= 768px) */
 @media (max-width: 768px) {
     ul {
@@ -487,9 +508,6 @@ button.btn-faqs:hover {
         color: rgba(52, 42, 52, 1);
     }
 
-    /* h3 {
-        margin-bottom: 1.75rem !important;
-    } */
     .headshot-body {
         padding-bottom: 2.25rem;
     }
@@ -527,6 +545,31 @@ button.btn-faqs:hover {
     }
     .container-marquee:hover .marquee-content {
         animation-play-state: running;
+    }
+
+    .contact-form {
+        display: none;
+        opacity: 0;
+        transition: max-height 0.5s ease, opacity 0.3s ease;
+        transform: translateY(-10px);
+    }
+    .contact-form.show {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .form-btn {
+        display: block;
+        width: 100%;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 1.2rem;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 10px;
     }
     
     .footer-link {
