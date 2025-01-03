@@ -307,7 +307,7 @@ a.btn-primary:hover {
         width: 100%;
     }
     h4.benefit-list {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
     }
     .marquee-content {
         animation: marquee 10s linear infinite;
