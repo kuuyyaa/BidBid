@@ -300,6 +300,66 @@ svg.bi {
     opacity: 1; /* Show button on hover */
 }
   
+/* Contact Us Form */
+.contact-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+.contact-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.form-group textarea {
+    resize: vertical;
+    height: 100px;
+}
+.form-group.hidden {
+    display: none;
+}
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+.form-row .form-group {
+    flex: 1;
+}
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: #0056b3;
+}
 
 /* Media query for mobile devices (screen width <= 768px) */
 @media (max-width: 768px) {

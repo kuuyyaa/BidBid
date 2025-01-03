@@ -288,10 +288,60 @@
               </div>
               <div class="col-md-6 col-lg-6 d-flex flex-row">
                   <div class="card contact-card" style="width: 100%; border: none; backdrop-filter: blur(8px);">
-                    <div class="card-body">
-                      <h3>Lorem Ipsum</h3>
-                      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit beatae animi quo quaerat! Dolorem non explicabo temporibus iste rerum adipisci saepe debitis ratione maiores porro! Optio quae tenetur ut eum modi accusantium cum animi esse praesentium neque reiciendis in maxime iste harum quis laudantium, asperiores porro saepe eaque necessitatibus dolorem.</p>
-                    </div>
+                    <form class="contact-form">
+                        <h2>Contact Us</h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">First Name</label>
+                                <input type="text" id="first-name" name="first-name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" id="last-name" name="last-name" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="referral">How did you hear about us?</label>
+                            <select id="referral" name="referral">
+                                <option value="linkedIn">LinkedIn</option>
+                                <option value="instagram">Instagram</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject">
+                                <option value="demo-request">Demo Request</option>
+                                <option value="business-enquiry">Business Enquiry</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group hidden" id="custom-subject-group">
+                            <label for="custom-subject">Custom Subject</label>
+                            <input type="text" id="custom-subject" name="custom-subject">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Submit</button>
+                    </form>
                   </div>
                 </div>
           </div>
@@ -346,6 +396,20 @@
     // Optional: Re-check if screen size changes dynamically
     window.addEventListener("resize", handleScroll);
 });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const subjectSelect = document.getElementById('subject');
+            const customSubjectGroup = document.getElementById('custom-subject-group');
+
+            subjectSelect.addEventListener('change', () => {
+                if (subjectSelect.value === 'other') {
+                    customSubjectGroup.classList.remove('hidden');
+                } else {
+                    customSubjectGroup.classList.add('hidden');
+                }
+            });
+        });
     </script>
 </body>
 </html>
