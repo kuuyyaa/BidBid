@@ -265,11 +265,38 @@
                   </svg>
             </button>
             </div>  
-            
             </div>
-            
         </div>
     </section>
+
+    <section class="page-section skills" id="skills">
+        <div class="container skills">
+          <h2>Skills</h2>
+          <hr>
+            <div class="row">
+              <div class="col-md-6 d-flex flex-row">
+                  <div class="card skill-card" style="width: 100%; border: none; backdrop-filter: blur(8px);">
+                    <div class="d-flex justify-content-center">
+                      <!-- <img src="./images/custom_headshot.png" class="card-headshot" alt="..."> -->
+                    </div>
+                      <div class="card-body">
+                        <h3>Lorem Ipsum</h3>
+                          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor repudiandae assumenda alias. Eius magni totam qui ipsa recusandae aspernatur quasi minus autem labore possimus nemo quisquam veritatis, accusantium voluptatibus temporibus magnam eos! Earum consequuntur debitis eum dolorem doloremque quam, harum maiores vitae alias quisquam modi iste animi incidunt ab ad nesciunt dolorum dolores? Aliquid ducimus nemo quisquam itaque iusto vitae rerum ipsum atque omnis quia repudiandae, quis laborum ad quos temporibus accusamus vero doloribus labore consectetur libero delectus illum et. Veniam nobis cumque nostrum beatae laborum, ut ratione tenetur voluptate laboriosam quas similique at? Sequi ut similique necessitatibus distinctio porro!</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-6 col-lg-6 d-flex flex-row">
+                  <div class="card skill-card" style="width: 100%; border: none; backdrop-filter: blur(8px);">
+                    <div class="card-body">
+                      <h3>Lorem Ipsum</h3>
+                      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit beatae animi quo quaerat! Dolorem non explicabo temporibus iste rerum adipisci saepe debitis ratione maiores porro! Optio quae tenetur ut eum modi accusantium cum animi esse praesentium neque reiciendis in maxime iste harum quis laudantium, asperiores porro saepe eaque necessitatibus dolorem.</p>
+                    </div>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </section>
+  
       
 
     <!-- Bootstrap JS and dependencies -->
@@ -277,23 +304,47 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const text = "Powering Procurement Excellence";
-            const typewriterElement = document.getElementById("typewriter");
-            let i = 0;
+       document.addEventListener("DOMContentLoaded", () => {
+    const marqueeContainer = document.querySelector(".container-marquee");
+    const exploreButton = document.querySelector(".explore-button");
+    const marqueeImages = marqueeContainer.querySelectorAll("img");
 
-            function typeWriter() {
-                if (i < text.length) {
-                    typewriterElement.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 30); // Adjust typing speed here
-                }
-            }
+    // Function to check if the screen is mobile-sized
+    const isMobileScreen = () => window.innerWidth <= 768; // Adjust threshold as needed
 
-            // Clear the text content and start typing effect
-            typewriterElement.textContent = "";
-            typeWriter();
-        });
+    const handleScroll = () => {
+        if (!isMobileScreen()) return; // Exit if not on a mobile screen
+
+        const rect = marqueeContainer.getBoundingClientRect();
+        const screenHeight = window.innerHeight;
+
+        // Check if the marquee is above 75% of the viewport height
+        if (rect.top <= screenHeight * 0.25 && rect.bottom > screenHeight * 0.01) {
+            exploreButton.style.opacity = "1"; // Show button
+            exploreButton.style.pointerEvents = "auto"; // Enable interactions
+
+            marqueeImages.forEach((img) => {
+                img.style.opacity = "0.1"; // Reduce opacity of images
+            });
+        } else {
+            exploreButton.style.opacity = "0"; // Hide button
+            exploreButton.style.pointerEvents = "none"; // Disable interactions
+
+            marqueeImages.forEach((img) => {
+                img.style.opacity = "1"; // Reset opacity of images
+            });
+        }
+    };
+
+    // Attach scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Trigger on page load
+    handleScroll();
+
+    // Optional: Re-check if screen size changes dynamically
+    window.addEventListener("resize", handleScroll);
+});
     </script>
 </body>
 </html>

@@ -200,6 +200,7 @@ a.btn-primary:hover {
         mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent); /* Standard mask */
         -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent); /* WebKit-based browsers */
         margin-bottom: 1.25rem;
+    z-index: 1;
 }
 .portfolio {
     background: linear-gradient(to right, rgba(64, 54, 182, 1), rgba(52, 42, 52, 1));
@@ -241,6 +242,7 @@ a.btn-primary:hover {
     /* background-color: white; */
     border-radius: 10%;
     /* margin: 0.5rem; */
+    transition: opacity 0.3s ease-in-out;
 }
  
   /* Button Styling */
@@ -327,5 +329,6 @@ a.btn-primary:hover {
     .container-marquee:hover .marquee-content {
         animation-play-state: running;
     }
+    
 
 }
